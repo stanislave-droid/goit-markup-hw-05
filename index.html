@@ -517,9 +517,11 @@
             Leave your contacts and we will call you back
           </p>
           <div class="main-form-fields-wrapper">
-            <label class="main-form-label">
-              Name
-              <div>
+            <div>
+              <label class="main-form-label" for="main-form-input-name">
+                Name
+              </label>
+              <div class="main-form-input-wrapper">
                 <input
                   type="text"
                   class="main-form-input"
@@ -529,10 +531,12 @@
                   <use href="./images/icons.svg#icon-main-form-person"></use>
                 </svg>
               </div>
-            </label>
-            <label class="main-form-label">
-              Phone
-              <div>
+            </div>
+            <div>
+              <label class="main-form-label" for="main-form-input-phone">
+                Phone
+              </label>
+              <div class="main-form-input-wrapper">
                 <input
                   type="tel"
                   class="main-form-input"
@@ -542,30 +546,35 @@
                   <use href="./images/icons.svg#icon-main-form-phone"></use>
                 </svg>
               </div>
-            </label>
-            <label class="main-form-label">
-              Email
-              <div>
+            </div>
+            <div>
+              <label class="main-form-label" for="main-form-input-email">
+                Email
+              </label>
+              <div class="main-form-input-wrapper">
                 <input
                   type="email"
                   class="main-form-input"
                   name="main-form-input-email"
+                  id="main-form-input-email"
                 />
                 <svg width="18" height="18">
                   <use href="./images/icons.svg#icon-main-form-email"></use>
                 </svg>
               </div>
-            </label>
-
-            <label class="main-form-label">
-              Comment
+            </div>
+            <div>
+              <label class="main-form-label" for="main-form-textarea">
+                Comment
+              </label>
               <textarea
                 name="main-form-textarea"
+                id="main-form-textarea"
                 class="main-form-textarea"
                 placeholder="Text input"
                 rows="8"
               ></textarea>
-            </label>
+            </div>
           </div>
 
           <label class="main-form-policy-label">
@@ -580,10 +589,8 @@
                 <use href="./images/icons.svg#icon-accept-policy"></use>
               </svg>
             </span>
-            <div>
-              I accept the terms and conditions of the
-              <a href="">Privacy Policy</a>
-            </div>
+            I accept the terms and conditions of the
+            <a href="">Privacy Policy</a>
           </label>
           <button type="submit" class="main-form-submit-btn">Send</button>
         </form>
