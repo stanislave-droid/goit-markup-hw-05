@@ -20,7 +20,15 @@ a {
 }
 
 button {
+  margin: 0;
+  padding: 0;
   transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input {
+  transition-property: border;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -460,6 +468,7 @@ svg {
 }
 
 .footer-links {
+  margin-right: 80px;
 }
 
 .footer-links-text {
@@ -479,5 +488,71 @@ svg {
 
 .footer-links-icon:hover,
 .footer-links-icon:focus {
+  background-color: #31d0aa;
+}
+
+.footer-form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-form-title {
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.footer-form {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.footer-form-input {
+  border: 1px solid #fff;
+  border-radius: 4px;
+  width: 264px;
+  height: 40px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  background-color: transparent;
+  padding: 7px 15px;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+.footer-form-input::placeholder {
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+.footer-form-input:focus {
+  border: 1px solid #31d0aa;
+}
+
+.footer-form-btn {
+  border-radius: 4px;
+  border: none;
+  padding: 8px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  background-color: #4d5ae5;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: #fff;
+  fill: #fff;
+}
+
+.footer-form-btn:focus,
+.footer-form-btn:hover {
   background-color: #31d0aa;
 }
