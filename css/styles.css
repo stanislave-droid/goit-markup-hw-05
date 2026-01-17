@@ -27,8 +27,15 @@ button {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-input {
+input,
+textarea {
   transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+svg {
+  transition-property: fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -522,6 +529,7 @@ svg {
   line-height: 2;
   letter-spacing: 0.04em;
   color: #fff;
+  outline: none;
 }
 
 .footer-form-input::placeholder {
@@ -555,4 +563,225 @@ svg {
 .footer-form-btn:focus,
 .footer-form-btn:hover {
   background-color: #31d0aa;
+}
+
+.overlay {
+  position: fixed;
+  background-color: rgba(46, 47, 66, 0.4);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition-property: opacity;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 24px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
+    0 2px 1px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fcfcfc;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  max-width: 408px;
+  width: 408px;
+  max-height: 584px;
+  overflow-y: auto;
+}
+
+.main-form {
+  padding-top: 48px;
+  position: relative;
+}
+
+.main-form-close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-form-close-btn:hover {
+  background-color: #404bbf;
+  fill: #fff;
+}
+
+.main-form-title {
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #2e2f42;
+  margin-bottom: 16px;
+  display: block;
+  max-width: 360px;
+}
+
+.main-form-fields-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.main-form-label {
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.main-form-input {
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  width: 100%;
+  height: 40px;
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: 0.04em;
+  display: block;
+  padding: 7px 37px;
+  outline: none;
+}
+
+.main-form-input:focus {
+  border-color: #4d5ae5;
+}
+
+.main-form-input:focus + svg {
+  fill: #4d5ae5;
+}
+
+.main-form-label div {
+  position: relative;
+}
+
+.main-form-label div svg {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+}
+
+.main-form-textarea {
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  width: 100%;
+  resize: none;
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: 0.04em;
+  padding-top: 7px;
+  padding-left: 15px;
+  padding-right: 15px;
+  outline: none;
+  height: 120px;
+}
+
+.main-form-textarea::placeholder {
+  color: rgba(46, 47, 66, 0.4);
+}
+
+.main-form-textarea:focus {
+  border-color: #4d5ae5;
+}
+
+.main-form-policy-label {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  margin-bottom: 24px;
+}
+
+.main-form-policy-label div {
+  display: flex;
+  align-items: center;
+}
+
+.main-form-policy-check {
+}
+
+.main-form-policy-fake-check {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  transition-property: border, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  margin-right: 8px;
+  position: relative;
+  fill: transparent;
+}
+
+.main-form-policy-check:checked + .main-form-policy-fake-check {
+  background-color: #404bbf;
+  border: 1px solid #404bbf;
+}
+
+.main-form-policy-fake-check svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main-form-policy-check:checked + span {
+  fill: #f4f4fd;
+}
+
+.main-form-policy-label a {
+  line-height: 1.33333;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #4d5ae5;
+  padding-left: 3px;
+}
+
+.main-form-submit-btn {
+  border-radius: 4px;
+  padding: 16px 32px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  background-color: #4d5ae5;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: #fff;
+  border: none;
+  width: 169px;
+}
+
+.main-form-submit-btn:hover,
+.main-form-submit-btn:focus {
+  background-color: #404bbf;
 }
